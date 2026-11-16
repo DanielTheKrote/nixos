@@ -11,9 +11,8 @@
     sddm.enable = true;
     sound.enable = true;
     locale.enable = true;
+    network.enable = true;
   };
-
-  networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
