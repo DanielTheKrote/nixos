@@ -1,11 +1,11 @@
-{ username, ...}:
+{ username, lib, ...}:
 let
   toPath = baseDir: name: baseDir + "/${name}";
 
   importDirs = baseDir:
-    builtins.map ({ name: ...}: toPath baseDir name)
+    builtins.map ({ name, ...}: toPath baseDir name)
       (builtins.filter ({ value, ...}: value == "directory")
-        (pkgs.lib.attrsToList
+        (lib.attrsToList
 	  (builtins.readDir baseDir)));
 in
 {
@@ -13,8 +13,7 @@ in
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
-    stateVersion = "26.11";
+    stateVersion = "26.05";
   };
-
   imports = importDirs ./.;
 }
