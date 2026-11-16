@@ -5,12 +5,11 @@
       ../system
       ./hardware-configuration.nix
       inputs.ewm.nixosModules.default
-
     ];
-
 
   system = {
     sddm.enable = true;
+    sound.enable = true;
   };
 
   networking.networkmanager.enable = true;
