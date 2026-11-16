@@ -11,7 +11,7 @@
   system = {
     sddm.enable = true;
     sound.enable = true;
-    locale.enable = false;
+    locale.enable = true;
     network.enable = true;
   };
 
