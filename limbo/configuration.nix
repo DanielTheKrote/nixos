@@ -14,6 +14,7 @@
     locale.enable = true;
     network.enable = true;
     ewm.enable = true;
+    plasma.enable = true;
   };
 
 
