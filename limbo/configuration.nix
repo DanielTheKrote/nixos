@@ -10,6 +10,7 @@
   system = {
     sddm.enable = true;
     sound.enable = true;
+    locale.enable = true;
   };
 
   networking.networkmanager.enable = true;
