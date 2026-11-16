@@ -15,9 +15,7 @@
 
   environment.systemPackages = with pkgs; [
      git 
-     neovim 
      emacs
-     alacritty 
      wget
      sudo
   ];
