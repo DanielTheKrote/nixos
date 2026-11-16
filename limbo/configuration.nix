@@ -31,6 +31,7 @@
       firefox.enable = true;
       alacritty.enable = true;
       nerdfonts.enable = true;
+      xdg.enable = true;
     };  
   });
 
