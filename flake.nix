@@ -29,6 +29,7 @@
 	    useGlobalPkgs = true;
 	    useUserPackages = true;
 	    users.${username} = import ./limbo/home.nix;
+	    
 	    extraSpecialArgs = {
 	      inherit username;
 	      inherit inputs;
