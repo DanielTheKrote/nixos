@@ -5,7 +5,6 @@ let
 in {
   options.system.sound = { enable = mkEnableOption "enable sound"; };
   config = mkIf cfg.enable {
-    security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
       alsa.enable = true;

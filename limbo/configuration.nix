@@ -7,30 +7,39 @@
       inputs.ewm.nixosModules.default
     ];
 
+  system.stateVersion = "26.05"; 
   system = {
     sddm.enable = true;
     sound.enable = true;
-    locale.enable = true;
+    locale.enable = false;
     network.enable = true;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.ewm.enable = true;
 
-  environment.systemPackages = with pkgs; [
-     git 
-     emacs
-     wget
-     sudo
-  ];
- 
   users.users.daniel = {
     isNormalUser = true;
     extraGroups = ["wheel"];
     initialPassword = "123";
   };
 
-  programs.ewm.enable = true;
+  home-manager.users.daniel = ({...}: {
+    imports = [ ../haus ];
+    config.haus = {
+      neovim.enable = true;
+      chromium.enable = true;
+      firefox.enable = true;
+      alacritty.enable = true;
+    };  
+  });
 
-  system.stateVersion = "26.05"; # Did you read the comment?
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  environment.systemPackages = with pkgs; [
+     git
+     emacs     
+     wget
+     sudo
+  ];
 }
 
