@@ -13,9 +13,9 @@
     sound.enable = true;
     locale.enable = true;
     network.enable = true;
+    ewm.enable = true;
   };
 
-  programs.ewm.enable = true;
 
   users.users.daniel = {
     isNormalUser = true;
@@ -30,6 +30,7 @@
       chromium.enable = true;
       firefox.enable = true;
       alacritty.enable = true;
+      nerdfonts.enable = true;
     };  
   });
 
