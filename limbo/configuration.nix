@@ -33,6 +33,7 @@
       alacritty.enable = true;
       nerdfonts.enable = true;
       xdg.enable = true;
+      dolphin.enable = true;
     };  
   });
 
