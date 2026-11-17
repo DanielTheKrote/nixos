@@ -29,7 +29,7 @@
     config.haus = {
       neovim.enable = true;
       chromium.enable = true;
-      firefox.enable = true;
+      librewolf.enable = true;
       alacritty.enable = true;
       nerdfonts.enable = true;
       xdg.enable = true;
