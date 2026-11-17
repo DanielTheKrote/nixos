@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 with lib;
 let
   cfg = config.haus.librewolf;
@@ -32,6 +32,10 @@ in {
           "browser.search.defaultenginename" = "DuckDuckGo";
           "browser.search.order.1" = "DuckDuckGo";
         };
+	extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+   	  ublock-origin
+	  bitwarden
+	];
       };
       policies = {
         AppAutoUpdate = false;
@@ -48,18 +52,6 @@ in {
         SearchSuggestEnable = false;
         PromptForDownloadLocation = true;
         DefaultDownloadDirectory = "/home/daniel/downloads"; # Remove hardcode later
-
-        ExtensionSettings = 
-        let
-          moz = short: "https://addons.mozzila.org/firefox/downloads/latest/${short}latest.xpi";
-        in {
-          "*".installation_mode = "blocked";
-          "uBlock@raymondhill.net" = {
-            install_url = moz "ublock-origin";
-            installation_mode = "force_installed";
-            updates_disabled = true;
-          };
-        };
       };
     };
   };

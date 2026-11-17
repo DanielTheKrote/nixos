@@ -8,15 +8,24 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}@inputs:
+  outputs = { self, nixpkgs, home-manager, nur, ...}@inputs:
   let 
     system = "x86_64-linux";
     username = "daniel";
     hostname = "limbo";
-    pkgs = import nixpkgs { inherit system; };
-  in {
+
+    pkgs = import nixpkgs { 
+      inherit system; 
+      overlays = [ nur.overlays.default ];
+    };
+  in 
+  {
     nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
       inherit system;
       inherit pkgs;
