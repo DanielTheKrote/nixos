@@ -2,7 +2,6 @@
   description = "A very basic flake";
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
-    ewm.url = "https://codeberg.org/ezemtsov/ewm/archive/master.tar.gz";
 
     home-manager = {
       url = "github:nix-community/home-manager";

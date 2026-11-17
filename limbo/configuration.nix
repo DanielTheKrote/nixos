@@ -4,7 +4,6 @@
     [
       ../system
       ./hardware-configuration.nix
-      inputs.ewm.nixosModules.default
     ];
 
   system.stateVersion = "26.05"; 
@@ -13,7 +12,6 @@
     sound.enable = true;
     locale.enable = true;
     network.enable = true;
-    ewm.enable = true;
     plasma.enable = true;
   };
 
